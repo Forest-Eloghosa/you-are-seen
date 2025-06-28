@@ -55,6 +55,13 @@ header {
     border-color: #1d6d8a; /* dark mid blue */
 }
 
+/*Resources section*/
+.custom-img {
+  height: 250px;
+  object-fit: cover;
+}
+
+
 /* Footer */
 #social-networks {
     text-align: center;
@@ -69,7 +76,10 @@ header {
     padding: 5%;
     color: #3a3a3a;
 }
-
+.small-footer{
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
+}
 /* Media query: large or landscape phones (576px and up) */
 
 @media (max-width: 575.98px) {
