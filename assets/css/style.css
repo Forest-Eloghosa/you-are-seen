@@ -10,9 +10,17 @@ h1, h2 {
     font-family: "DM Serif Display", serif;
 }
 
-.sharp-cornersn * {
+.sharp-corners * {
     border-radius: 0;
 }
+
+/* Wrapper makes footer sticky */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 /*Header*/
 .navbar-brand {
   font-family: "DM Serif Display", serif;
@@ -31,6 +39,9 @@ header {
 
 
 /*Main Section*/
+main.flex-grow-1 {
+  flex: 1;
+}
 
 /*Check in section */
 
@@ -63,23 +74,44 @@ header {
 
 
 /* Footer */
+/* Footer stays at the bottom */
+footer {
+  width: 100%;
+  background-color: #f8f9fa; /* optional: same as Bootstrap .bg-light */
+  text-align: center;
+}
 #social-networks {
-    text-align: center;
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-evenly;
-    list-style-type: none;
+  list-style: none;
+  padding: 0.5rem 0 0.25rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* More space between icons */
 }
 
 #social-networks i {
-    font-size: 160%;
-    padding: 5%;
-    color: #3a3a3a;
+  font-size: 1.4rem; /* Slightly reduced but still clear */
+  color: #3a3a3a;
+  transition: color 0.3s ease;
 }
-.small-footer{
-    padding: 0.5rem 0;
-    font-size: 0.85rem;
+
+#social-networks i:hover {
+  color: #1f7798; /* subtle hover effect */
 }
+
+.small-footer {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+footer.bg-light {
+  padding-top: 0.4rem !important;
+  padding-bottom: 0.4rem !important;
+  margin-top: 0 !important;
+}
+
 /* Media query: large or landscape phones (576px and up) */
 
 @media (max-width: 575.98px) {
