@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins&display=swap');
+/* General styles */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #a4c2d1; /* egg blue  */
+}
+
+h1, h2 {
+    font-family: "DM Serif Display", serif;
+}
+
+.sharp-cornersn * {
+    border-radius: 0;
+}
+/*Header*/
+.navbar-brand {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.6rem;
+}
+
+.nav-link {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+/* Ensure dropdown nav overlays properly on mobile */
+header {
+  z-index: 1030; /* Higher than default content */
+}
+
+
+/*Main Section*/
+
+/*Check in section */
+
+.check-in {
+    max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.confirmation-message {
+    margin-top: 2rem;
+}
+
+/*Buttons*/
+ .btn-primary {
+    background-color: #1f7798; /* mid blue */
+    border-color: #1f7798; /* mid blue */
+    font-weight: 600;
+}
+.btn-primary:hover {
+    background-color: #1d6d8a; /* dark mid blue */
+    border-color: #1d6d8a; /* dark mid blue */
+}
+
+/* Footer */
+#social-networks {
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+#social-networks i {
+    font-size: 160%;
+    padding: 5%;
+    color: #3a3a3a;
+}
+
+/* Media query: large or landscape phones (576px and up) */
+
+@media (max-width: 575.98px) {
+  .navbar-collapse {
+    background-color: #ffffff; /* matches page background */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* Media query: tablets and larger (768px and up) */
+
+/* Large devices (laptops and desktops, 992px and up) */
+

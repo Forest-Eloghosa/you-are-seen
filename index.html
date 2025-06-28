@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Tittle-->
+    <title>You Are Seen</title>
+
+    <!--Bootstrap CSS link-->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+   <!--Custom CSS link-->
+   <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+     <header class="bg-white shadow-sm position-relative z-3">
+  <nav class="navbar navbar-expand-sm container">
+    <!-- Logo/Title -->
+    <a class="navbar-brand fw-bold" href="index.html">You Are Seen</a>
+
+    <!-- Custom Font Awesome toggle icon -->
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Menu items -->
+    <div class="collapse navbar-collapse justify-content-end bg-white py-3 py-sm-0 mt-2 mt-sm-0" id="navbarNav">
+      <ul class="navbar-nav text-end text-sm-start w-100 w-sm-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#check-in">Check-in</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Resources</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+
+
+
+    <!--Main Content-->
+<main>
+    <!--Check in section-->
+    <section id="check-in" class="section">
+    <form>
+        <div class="container text-center">
+            <h2 class="fw-bold">Emotional Check-In</h2>
+            <p class="lead">This space is yours. No judgment. No fixing. Just a place to offload.</p>
+            </div>
+
+            <main class="container py-5">
+    <form class="check-in">
+      <div class="mb-4 sharp-corners">
+        <label for="journalEntry" class="form-label fw-semibold">This space is yours — say what you need to.</label>
+        <textarea class="form-control" id="journalEntry" rows="8" placeholder="Let it all out..." required></textarea>
+      </div>
+       <div class="col-12 sharp-corners">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+       </div>
+    </form>
+    </section>
+
+    <!-- Soft Confirmation Message (hidden by default) -->
+<div id="confirmation-message" class="confirmation-message text-center text-muted d-none">
+  <p><i class="fa-solid fa-heart"></i> You're heard. Thank you for sharing.</p>
+</div>
+</main>
+ 
+
+
+    <!--Footer-->
+        <footer id="contact" class="bg-light text-center py-3 mt-auto">
+     <ul id="social-networks">
+        <li>
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit our Facebook page (opens in a new tab)"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit our Instagram page (opens in a new tab)"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://www.twitter.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit our Twitter page (opens in a new tab)"
+            ><i class="fa-brands fa-x-twitter"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit our YouTube page (opens in a new tab)"
+            ><i class="fa-brands fa-youtube"></i></a>
+        </li>
+      </ul>
+      <p class="mb-0">&copy; 2025 You Are Seen. All feelings welcome here.</p>
+    </footer>
+
+    <!--Javascript link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+    <!--Font Awesome lint-->
+    <script src="https://kit.fontawesome.com/af3ee3b7e1.js" crossorigin="anonymous"></script>
+
+    <script>
+  // Handle form submission
+  document.getElementById('check-in').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent page reload
+    document.getElementById('confirmation-message').classList.remove('d-none');
+    document.getElementById('journalEntry').value = ''; // Clear the textarea
+  });
+</script>
+</body>
+</html>
