@@ -82,10 +82,21 @@
     </section>
     </main>
 
-    <!-- Soft Confirmation Message (hidden by default) -->
-<div id="confirmation-message" class="confirmation-message text-center text-muted d-none">
-  <p><i class="fa-solid fa-heart"></i> You're heard. Thank you for sharing.</p>
- </div>
+<!-- Confirmation Modal -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center custom-modal">
+      <div class="modal-body">
+        <p class="text-muted mb-0"><i class="fa-solid fa-heart me-2"></i>What you shared matters. You are seen and heard, just as you are.</p>
+      </div>
+      <div class="modal-footer border-0 justify-content-center">
+        <h4 id="confirmationModalLabel">Thank you for sharing</h4>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     <!--Footer/Social network-->
         <footer id="contact" class="bg-light text-center mt-auto custom-compact">
@@ -123,13 +134,18 @@
     <!--Font Awesome lint-->
     <script src="https://kit.fontawesome.com/af3ee3b7e1.js" crossorigin="anonymous"></script>
 
-    <script>
-  // Handle form submission
+<script>
   document.getElementById('check-in').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent page reload
-    document.getElementById('confirmation-message').classList.remove('d-none');
-    document.getElementById('journalEntry').value = ''; // Clear the textarea
+    e.preventDefault(); // Prevent form from reloading page
+
+    // Clear the textarea
+    document.getElementById('journalEntry').value = '';
+
+    // Show the modal
+    const confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+    confirmationModal.show();
   });
 </script>
+
 </body>
 </html>
