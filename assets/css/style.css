@@ -4,49 +4,78 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #a4c2d1; /* egg blue  */
+    /* Wrapper makes footer sticky */
+      display: flex;
+  min-height: 100vh
 }
 
 h1, h2 {
-    font-family: "DM Serif Display", serif;
+    font-family: 'DM Serif Display', serif;
 }
 
-.sharp-corners * {
-    border-radius: 0;
+.sharp-corners *,
+.sharp-corners {
+  border-radius: 0;
 }
 
-/* Wrapper makes footer sticky */
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+
+/*Navbar*/
+.navbar-collapse {
+  width: 100%;
+  background-color: #fff;
 }
 
-/*Header*/
+
+.logo {
+  height: 50px;
+  width: auto;
+  background-color: darkgray;
+  margin-right: 1rem;
+  display: block;
+}
+
+
 .navbar-brand {
-  font-family: "DM Serif Display", serif;
+  font-family: 'DM Serif Display', serif;
   font-size: 1.6rem;
+  max-height: 50px;
 }
 
 .nav-link {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
 }
 
-/* Ensure dropdown nav overlays properly on mobile */
-header {
-  z-index: 1030; /* Higher than default content */
+
+/*Header*/
+#hero {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem
 }
 
 
-/*Main Section*/
+
+.welcome-message {
+  font-weight: 400;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+  color: #333; /* Soft gray for good contrast */
+}
+
+
+/*Main/Check in Section*/
 main.flex-grow-1 {
   flex: 1;
 }
 
-/*Check in section */
+
 
 .check-in {
-    max-width: 700px;
+max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -67,18 +96,36 @@ main.flex-grow-1 {
 }
 
 /*Resources section*/
-.custom-img {
-  height: 250px;
+ .custom-img {
   object-fit: cover;
+  height: 250px;
 }
 
+.card {
+  margin-bottom: 1rem;
+}
+
+/* Reduce spacing in sections */
+.section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Reduce spacing in container */
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 
 /* Footer */
-/* Footer stays at the bottom */
+
 footer {
   width: 100%;
-  background-color: #f8f9fa; /* optional: same as Bootstrap .bg-light */
+  background-color: #f8f9fa; 
   text-align: center;
+  background-color: transparent;
 }
 #social-networks {
   list-style: none;
@@ -99,18 +146,15 @@ footer {
   color: #1f7798; /* subtle hover effect */
 }
 
-.small-footer {
+.custom-compact {
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
   font-size: 0.8rem;
   line-height: 1.3;
+   margin-top: 0;
 }
 
-.custom-footer {
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
-  margin-top: 0;
-}
+
 
 /* Media query: large or landscape phones (576px and up) */
 
@@ -123,9 +167,26 @@ footer {
     width: 100%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   }
+
 }
 
 /* Media query: tablets and larger (768px and up) */
+@media (min-width: 768px) {
+  .custom-img {
+    height: 300px;
+  }
+  .card-title {
+    font-size: 1.5rem;
+  }
+}
+
 
 /* Large devices (laptops and desktops, 992px and up) */
-
+@media screen and (min-width: 992px) {
+  .section {
+    padding: 3rem 0;
+  }
+  .navbar-brand {
+    font-size: 2rem;
+  }
+}
