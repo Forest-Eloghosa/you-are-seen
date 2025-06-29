@@ -5,6 +5,8 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #a4c2d1; /* egg blue  */
     /* Wrapper makes footer sticky */
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
   min-height: 100vh
 }
@@ -69,7 +71,9 @@ h1, h2 {
 
 /*Main/Check in Section*/
 main.flex-grow-1 {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 
@@ -97,7 +101,8 @@ max-width: 800px;
 
 /*Resources section*/
  .custom-img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 250px;
 }
 
@@ -131,14 +136,20 @@ footer {
   list-style: none;
   padding: 0.5rem 0 0.25rem;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 1.5rem; /* More space between icons */
 }
 
 #social-networks i {
   font-size: 1.4rem; /* Slightly reduced but still clear */
   color: #3a3a3a;
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 
@@ -165,7 +176,8 @@ footer {
     top: 100%;
     left: 0;
     width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   }
 
 }
