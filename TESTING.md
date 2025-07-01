@@ -11,6 +11,7 @@ This file documents all testing conducted on  **You Are Seen** project to ensure
 - [Functionality Testing](#functionality-testing)
 - [Responsiveness Testing](#responsiveness-testing)
 - [Browser Compatibility Testing](#browser-compatibility-testing)
+- [Performance and Lighthouse Scan](#performance-and-lighthouse-scan)
 - [Validator Results](#validator-results)
 - [Bugs and Fixes](#bugs-and-fixes)
 - [Additional Notes](#additional-notes)
@@ -62,9 +63,9 @@ The goal of testing was to ensure that the site behaves as expected across diffe
 ##  Responsiveness Testing
 
 Tested on the following devices:
- - iPhone 16e
-  - Samsung Tab A9
-  - Windows Chrome, Firefox, Edge
+ - iPhone 
+  - Samsung Tab
+  - Windows Chrome, Edge
   - Android Chrome
 
 ### Results:
@@ -77,14 +78,35 @@ Tested on the following devices:
 ##  Browser Compatibility Testing
 
 | Browser      | Result |
-|--------------|--------|
+|-------------|--------|
 | Chrome       | 100%   |
-| Firefox      |   100% |
-| Safari       | 100%   |
+ Safari       | 100%   |
 | Microsoft Edge | 100% |
 
 ---
 
+## Performance and Lighthouse Scan
+A Lighthouse report was conducted, and the following issues were identified and addressed:
+
+###  Meta Description Missing
+- **Fix:** Added `<meta name="description">` to improve SEO and content summarization.
+
+###  h1 in section lacks font-size
+- **Fix:** font-size added in CSS for all heading levels to prevent browser future changes.
+
+### Heading Order Not Sequential
+- **Fix:** Headings were checked and resolved (e.g., no jumping from `<h1>` to `<h3>`).
+
+###  DOM Size Optimization
+- **Fix:** Removed redundant wrappers and unnecessary nested.
+
+
+###  Oversized Images
+  - **Fix:**
+ Images resized using [Ezgif.com](http://ezgif.com/) and [TinyPNG](https://tinypng.com/)
+Compressed to appropriate dimensions 
+
+---
 ## Validator Results
 
 ### HTML
