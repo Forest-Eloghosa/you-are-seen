@@ -1,19 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins&display=swap');
 /* General styles */
 
+/* Asterisk wildcard selector to override default styles added by the browser */
+* {
+    padding: 0; /* Reset padding */
+    margin: 0; /* Reset margin */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #a4c2d1; /* egg blue  */
     /* Wrapper makes footer sticky */
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-  min-height: 100vh
+      display: -webkit-box; /* Ensures flexbox is used for layout */
+      display: -ms-flexbox; 
+      display: flex; 
+  min-height: 100vh /* Ensures the body takes at least the full viewport height */
 }
 
 h1, h2 {
     font-family: 'DM Serif Display', serif;
-    font-size: 2rem;
+    font-size: 2rem; /* Default font size for headings */
+    font-weight: 700; /* Bold weight for emphasis */
+    letter-spacing: 2px; /* Increased letter spacing for better readability */
 }
 
 .sharp-corners *,
@@ -22,19 +31,20 @@ h1, h2 {
 }
 
 
-/*Navbar*/
+/*Navbar Section*/
+
+/* Navbar styles with dropdown toggle */
 .navbar-collapse {
-  width: 100%;
+  width: 100%; /* Full width for the navbar */
   background-color: #fff;
 }
 
 
 .logo {
-  height: 50px;
-  width: auto;
-  background-color: darkgray;
-  margin-right: 1rem;
-  display: block;
+  height: 50px; /* Adjusted height to fit the navbar */
+  width: auto; /* Maintain aspect ratio */
+  margin-right: 1rem; 
+  display: block; 
 }
 
 
@@ -46,74 +56,83 @@ h1, h2 {
 
 .nav-link {
   font-family: 'Poppins', sans-serif;
-  font-weight: 500;
+  font-weight: 500; /* Medium weight for better readability */
 }
 
 
 /*Header*/
 #hero {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem
+  margin-top: 10px; /* Adjusted to match the height of the navbar and to also prevent content from being covered */
+  background-image: url('../images/dark-wallpaper.png');
+  margin-bottom: 1rem; /* Spacing below the hero section */
+  padding-top: 1rem; /* Padding for the top of the hero section */
+  padding-bottom: 1rem; /* Padding for the bottom of the hero section */
+  background-size: cover; /* Ensures the background image covers the entire section */
+  position: relative; /* Allows for absolute positioning of child elements */
+  font-size: 1.2rem; /* Font size for the hero section */
 }
 
 
-
-.welcome-message {
-  font-weight: 400;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  padding-top: 0.5rem;
-  color: #333; /* Soft gray for good contrast */
+.custom-text {
+  color: white; /* White text for better contrast on dark background */
+  font-size: 1.2rem; /* Font size for the hero text */
+   font-style: italic;
+  padding: 0 1rem; /* Add some padding for better readability */
+  max-width: 800px; /* Limit the width for better readability */
+  margin: 0 auto; /* Center the text */
 }
 
 
 /*Main/Check in Section*/
 main.flex-grow-1 {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -webkit-box-flex: 1; /* Ensures the main section grows to fill available space */
+      -ms-flex: 1; 
+          flex: 1; 
 }
 
 
 
 .check-in {
-max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+max-width: 800px; /* Limit the width for better readability */
+  margin-left: auto; /* Center the form */
+  margin-right: auto; 
 }
 
 .confirmation-message {
-    margin-top: 2rem;
+    margin-top: 2rem; /* Spacing between the form and the confirmation message */
 }
 
 .custom-modal {
   background-color: #fce4ec; /* soft pink */
-  border-radius: 1rem;
-  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  padding: 1rem;
-  border: none;
+  border-radius: 1rem; /* rounded corners */
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* subtle shadow for depth */
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+  padding: 1rem; /* consistent padding */
+  border: none; /* no border for a cleaner look */
+  font-size: medium; /* consistent font size */
 }
 
 /*Buttons*/
  .btn-primary {
-    background-color: #1f7798; /* mid blue */
-    border-color: #1f7798; /* mid blue */
+    background-color: #1f7798; /* mid blue as per the design */
+    border-color: #1f7798; /* mid blue to match the background */
     font-weight: 600;
 }
 .btn-primary:hover {
-    background-color: #1d6d8a; /* dark mid blue */
-    border-color: #1d6d8a; /* dark mid blue */
+    background-color: #1d6d8a; /* dark mid blue to match the border */
+    border-color: #1d6d8a; /* dark mid blue to match the background */
 }
 
 /*Resources section*/
 .card-img-top.custom-img.sharp-corners {
-  -o-object-fit: cover;
-     object-fit: cover;
-     height: 250px;
+  -o-object-fit: cover; /* For older browsers */
+     -webkit-object-fit: cover; /* For Safari */
+        object-fit: cover; /* For modern browsers */
+     object-fit: cover; /* Ensures the image covers the card area without distortion */
+  height: 250px; /* Fixed height for consistency */
+     height: 250px; /* Ensures the image covers the card area without distortion */
+      width: 100%; /* Ensures the image covers the card area without distortion */
+  border-radius: 0; /* Removes any border radius for sharp corners */
 }
 
 .card {
@@ -190,6 +209,9 @@ footer {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   }
 
+  .custom-img {
+    height: 250px;
+  }
 }
 
 /* Media query: tablets and larger (768px and up) */
@@ -199,6 +221,9 @@ footer {
   }
   .card-title {
     font-size: 1.5rem;
+  }
+  .card-img-top.custom-img.sharp-corners {
+    height: 300px;
   }
 }
 
@@ -210,5 +235,22 @@ footer {
   }
   .navbar-brand {
     font-size: 2rem;
+  }
+  .card-img-top.custom-img.sharp-corners {
+    height: 600px; /* Taller images on larger screens */
+    width: 100%; /* Ensures the image covers the card area without distortion */
+  }
+
+  @media screen and (min-width: 1200px) { 
+
+    .card-img-top.custom-img.sharp-corners {
+      height: 700px; /* Taller images on larger screens */
+      width: 100%; /* Ensures the image covers the card area without distortion */
+
+    }
+  }
+  #hero {
+    padding-top: 10rem; /* More padding for larger screens */
+    padding-bottom: 17rem; /* More padding for larger screens */
   }
 }

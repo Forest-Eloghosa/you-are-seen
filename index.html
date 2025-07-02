@@ -28,8 +28,8 @@
   <nav id="navbar" class="navbar navbar-expand-sm bg-white shadow-sm position-relative z-3">
     <div class="container">
     <a class="navbar-brand" href="index.html">
-    <img src="assets/images/apple-touch-icon.png" alt="You Are Seen logo" class="logo">
-  </a>
+        <h1 id="logo">You Are Seen</h1>
+    </a>
 
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fa-solid fa-bars"></i>
@@ -57,10 +57,8 @@
 
 <!--Header-->
 <header>
-<div id="hero" class="text-center">
-  <h1 class="text-center">You Are Seen</h1>
-<img src="assets/images/Dark-You-Are-Amazing-Quote-Wallpaper-Dekstop.png" class="img-thumbnail" alt="image with a Quote of you are Amazing">
-<p class="welcome-message lead text-muted px-3 px-md-5"><em>This space is yours to pause, breathe, and check in — no pressure, no pretending. However you’re feeling, it matters. You are seen, and you deserve this moment to just be.</em></p>
+ <div id="hero" class="text-center">
+<p class="lead text-muted px-3 px-md-5 custom-text">This space is yours to pause, breathe, and check in — no pressure, no pretending. However you’re feeling, it matters. You are seen, and you deserve this moment to just be.</p>
 </div>
 </header>
 
@@ -69,7 +67,8 @@
         <section id="check-in" class="section">
         <div class="container text-center">
             <h2 class="display-6">Emotional Check-In</h2>
-            <p class="lead">This space is yours. No judgment. No fixing. Just a place to offload.</p>
+            <br>
+            <p class="lead"> No judgment. No fixing. Just a place to offload.</p>
             </div>
 <br>
     <form class="check-in">
@@ -92,7 +91,7 @@
         <p class="text-muted mb-0"><i class="fa-solid fa-heart me-2"></i>What you shared matters. You are seen and heard, just as you are.</p>
       </div>
       <div class="modal-footer border-0 justify-content-center">
-        <h4 id="confirmationModalLabel">Thank you for sharing</h4>
+        <h3 id="confirmationModalLabel">Thank you for sharing</h3>
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
@@ -137,17 +136,24 @@
     <script src="https://kit.fontawesome.com/af3ee3b7e1.js" crossorigin="anonymous"></script>
 
 <script>
-  document.getElementById('check-in').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent form from reloading page
+  document.querySelector('.check-in').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const input = document.getElementById('journalEntry');
+    const text = input.value;
 
-    // Clear the textarea
-    document.getElementById('journalEntry').value = '';
+    const invalidCharPattern = /[@#$%^&*<>]/;
 
-    // Show the modal
+    if (invalidCharPattern.test(text)) {
+      alert('Please remove special characters like @, #, $, %, etc.');
+      return;
+    }
+
+    input.value = '';
     const confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
     confirmationModal.show();
   });
 </script>
+
 
 </body>
 </html>

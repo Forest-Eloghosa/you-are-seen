@@ -46,27 +46,36 @@ The goal of testing was to ensure that the site behaves as expected across diffe
 - Navbar is simple and accessible on all screen sizes.
 - Footer contains reassurance messaging and icons.
 
+### 4. As a user, I want to view the site clearly on any device I’m using.
+- Site is responsive and adapts to mobile, tablet, and desktop views.
 ---
 
 ##  Functionality Testing
 
 | Feature                       | Test Case                                         | Result |
 |-----------------------------|--------------------------------------------------|--------|
-| Navbar links                | Clickable and navigate correctly                 |  100% |
-| Emotional Check-In form     | Displays modal upon submission                   | 100%     |
-| Modal (Bootstrap)           | Opens with keyboard and closes with ESC/Click   | 100%    |
-| Footer social icons         | Link to respective external pages                | 100%     |
-| Resources links             | Open in a new tab (target="_blank")             | 100%     |
+| Navbar links                | Clickable and navigate correctly                 |  Tested and Fully functional |
+| Emotional Check-In form     | Displays modal upon submission                   | Tested and Fully functional |
+| Modal (Bootstrap)           | Opens with keyboard and closes with ESC/Click   | Tested and Fully functional |
+| Footer social icons         | Link to respective external pages                | Tested and Fully functional   |
+| Resources links             | Open in a new tab (target="_blank")             | Tested and Fully functional |
+
+---
+### Functionality Testing Updates
+- Modal activates correctly after form submission.
+- Modal closes on user click of "Close" or outside the modal.
+- Submission clears textarea after confirming.
+- JavaScript input validation prevents special characters like `@`, `#`, `%`, `<`, etc. from being submitted.
 
 ---
 
 ##  Responsiveness Testing
 
 Tested on the following devices:
- - iPhone 
-  - Samsung Tab
-  - Windows Chrome, Edge
-  - Android Chrome
+- iPhone 
+- Samsung Tab
+- Windows Chrome, Edge
+- Android Chrome
 
 ### Results:
 - All content adapted well on each screen size
@@ -74,14 +83,33 @@ Tested on the following devices:
 - Images scaled correctly without overflow
 
 ---
+## Responsiveness Testing Updates
+Tested on devices of varying sizes:
+
+-  **iPhone  (Safari & Chrome)** – All sections scale correctly; modal behaves as expected.
+- **Samsung (Chrome)** – Images and navbar remain responsive.
+- **Windows (Chrome, Edge)** – Layout and modal display correctly.
+- **iPad (Safari)** – Navigation expands cleanly; content and images stack as expected.
+- **Desktop screens (1000px+ and 1200px+)** – Hero image padding scales; cards no longer appear cropped.
+
+Screenshots included in README show layout across dark theme, mobile, tablet, and desktop views.
+
+---
+### Navigation Testing Updates:
+- All internal links redirect to the appropriate section or page.
+- Navigation remains sticky and consistent across pages.
+- Navbar logo is now replaced with dynamic site title ("You Are Seen" or "Resources") for better readability and accessibility.
+- Navigation logo/title always links back to the homepage.
+
+---
 
 ##  Browser Compatibility Testing
 
 | Browser      | Result |
 |-------------|--------|
-| Chrome       | 100%   |
- Safari       | 100%   |
-| Microsoft Edge | 100% |
+| Chrome       | Tested and working on Chrome   |
+| Safari       | Tested and working on Safari   |
+| Microsoft Edge | Tested and working on Microsoft Edge |
 
 ---
 
@@ -112,28 +140,37 @@ Compressed to appropriate dimensions
 ### HTML
 - Tested with [W3C HTML Validator](https://validator.w3.org/)
 - Minor issues found and resolved:
-  - Stray `</div>` tag
-  - Unclosed `<h1>`
+- Stray `</div>` tag
+- Unclosed `<h1>`
 
 ### CSS
 - Tested with [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 -  No errors found
 
+Screenshots included in README shows validation results.
+
 ---
 
-##  Bugs and Fixes
+## Bugs and Fixes
 
-### 1. **Navbar Logo Positioned Incorrectly**
-- **Issue**: Logo appeared outside nav bar on some screen sizes
-- **Fix**: Removed conflicting `box-shadow` styling in custom CSS
+| Bug | Description | Fix Applied |
+|-----|-------------|-------------|
+| Navbar logo overflow | Logo spilled outside header in some viewports | Removed shadow and resized image |
+| Modal not visible | Previous confirmation used `d-none` | Replaced with Bootstrap modal |
+| Heading warnings | Inconsistent h1–h3 structure | Corrected to follow semantic order |
+| Images slow to load | Images were 3–5MB each | Compressed and resized to ~300–700KB |
+| Box shadow layout issue | Navbar pushed elements unexpectedly | Adjusted CSS stacking context and cleaned up rules |
+| Image cropping | Cards appeared cropped on large screens | Added media queries for `min-width: 1000px+` and adjusted height |
+| Hero image text not visible | Text over dark image lacked contrast | Added `.custom-text { color: white; }` styling |
+| Form misuse | Users could enter special characters in journal | JavaScript validation added to restrict symbols like `@` |
+| Incomplete screen support | Media query did not include screens over 1000px | Added custom queries for large devices |
 
-### 2. **Confirmation Message Not Visible**
-- **Issue**: Original hidden `div` went unnoticed after submitting form
-- **Fix**: Replaced with a Bootstrap modal that visually confirms submission
+---
 
-### 3. **Aria-labelledby Not Connected Properly**
-- **Issue**: Modal’s `aria-labelledby` attribute was not pointing to any element
-- **Fix**: Connected it to the `id` of the modal title element
+## Summary
+The project has been tested extensively across screen sizes, devices, and browsers. All performance warnings were either resolved or documented with fallback solutions. User stories were cross-checked to ensure all needs were fulfilled by the site functionality and flow.
+
+The final product is a calm, inclusive, and technically sound platform for emotional reflection — accessible, responsive, and user-centered.
 
 ---
 
