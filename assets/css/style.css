@@ -212,6 +212,13 @@ footer {
   .custom-img {
     height: 250px;
   }
+
+  @media screen and (max-width: 425px) {
+    .table-responsive {
+      padding: 0 1rem; /* Add horizontal padding */
+    }
+    
+  }
 }
 
 /* Media query: tablets and larger (768px and up) */
@@ -224,6 +231,13 @@ footer {
   }
   .card-img-top.custom-img.sharp-corners {
     height: 300px;
+  }
+
+  #hero {
+    padding-top: 5rem; /* More padding for larger screens */
+    padding-bottom: 5rem; /* More padding for larger screens */
+    -webkit-background-composite: padding-box; /* Ensures the background image is contained within the padding */
+    background-position: center; /* Centers the background image */
   }
 }
 
